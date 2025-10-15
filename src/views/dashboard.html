@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MorjaHome - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>MorjaHome</h1>
+        </div>
+        <div class="nav-user">
+            <span id="username">Loading...</span>
+            <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="dashboard-header">
+            <h2>Dashboard</h2>
+            <div class="user-info">
+                <span id="userRoles">Loading roles...</span>
+                <small id="lastLogin">Last login: Loading...</small>
+            </div>
+        </div>
+
+        <div id="loading-dashboard" style="text-align: center; padding: 2rem;">
+            <p>Loading dashboard...</p>
+        </div>
+
+        <div class="dashboard-stats">
+            <div class="stat-card">
+                <h3 id="totalLinks">0</h3>
+                <p>Total Links</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="totalClicks">0</h3>
+                <p>Total Clicks</p>
+            </div>
+            <div class="stat-card">
+                <h3 id="publicLinks">0</h3>
+                <p>Public Links</p>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="modules-section">
+                <h3>Available Modules</h3>
+                <div id="modulesList" class="modules-grid">
+                    <!-- Modules will be loaded here -->
+                </div>
+            </div>
+
+            <div class="links-section">
+                <h3>Recent Links</h3>
+                <div id="recentLinks" class="links-list">
+                    <!-- Recent links will be loaded here -->
+                </div>
+                
+                <h3>Popular Links</h3>
+                <div id="popularLinks" class="links-list">
+                    <!-- Popular links will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link Manager Modal -->
+    <div id="linkModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Manage Links</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="link-actions">
+                    <button id="addLinkBtn" class="btn btn-primary">Add New Link</button>
+                    <input type="text" id="searchLinks" placeholder="Search links...">
+                </div>
+                
+                <div id="linksList" class="links-container">
+                    <!-- Links will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add/Edit Link Modal -->
+    <div id="linkFormModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="linkFormTitle">Add Link</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="linkForm">
+                    <div class="form-group">
+                        <label for="linkTitle">Title</label>
+                        <input type="text" id="linkTitle" name="title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkUrl">URL</label>
+                        <input type="url" id="linkUrl" name="url" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkDescription">Description</label>
+                        <textarea id="linkDescription" name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="linkCategory">Category</label>
+                        <input type="text" id="linkCategory" name="category" placeholder="general">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="linkPublic" name="isPublic">
+                            Make this link public
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Save Link</button>
+                        <button type="button" class="btn btn-secondary modal-close">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-message" class="error" style="display: none;"></div>
+    <div id="success-message" class="success" style="display: none;"></div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>

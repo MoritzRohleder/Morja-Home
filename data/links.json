@@ -1,0 +1,14 @@
+[
+  {
+    "id": "9020cb8a-54d7-4389-b358-606fb996ff56",
+    "title": "GitHub",
+    "url": "https://github.com",
+    "description": "GitHub code hosting platform",
+    "category": "development",
+    "userId": "e4d94724-293e-45f9-830b-2ca5daaf39cf",
+    "isPublic": true,
+    "clickCount": 0,
+    "createdAt": "2025-10-15T09:28:10.760Z",
+    "updatedAt": "2025-10-15T09:28:10.760Z"
+  }
+]
