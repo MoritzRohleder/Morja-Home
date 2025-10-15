@@ -1,0 +1,20 @@
+[
+  {
+    "id": "e4d94724-293e-45f9-830b-2ca5daaf39cf",
+    "username": "admin",
+    "email": "admin@morjahome.local",
+    "password": "$2b$10$2BQ5TEDEFDxEx7iU01hqeu6v762vLi83g8obs9mtHZ9PIfIlYBumW",
+    "roles": [
+      "admin",
+      "links",
+      "photos",
+      "minecraft",
+      "vaultwarden"
+    ],
+    "twoFactorSecret": null,
+    "twoFactorEnabled": false,
+    "createdAt": "2025-10-15T09:17:06.999Z",
+    "lastLogin": "2025-10-15T09:26:58.531Z",
+    "isActive": true
+  }
+]

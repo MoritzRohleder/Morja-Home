@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MorjaHome - Login</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-form">
+            <h1>MorjaHome</h1>
+            <p class="subtitle">Private Dashboard</p>
+            
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <div class="form-group" id="twoFactorGroup" style="display: none;">
+                    <label for="twoFactorCode">Two-Factor Code</label>
+                    <input type="text" id="twoFactorCode" name="twoFactorCode" maxlength="6" placeholder="000000">
+                    <small>Enter the 6-digit code from your authenticator app</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            
+            <div id="error-message" class="error" style="display: none;"></div>
+            <div id="loading" style="display: none;">Logging in...</div>
+        </div>
+    </div>
+
+    <script src="/static/js/login.js"></script>
+</body>
+</html>
