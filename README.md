@@ -40,7 +40,7 @@ A private dashboard application with REST API, user authentication, two-factor a
    - Login with default admin credentials:
      - Username: `admin`
      - Password: `admin123`
-   - **Change the default password immediately!**
+   - **⚠️ SECURITY: Change the default password immediately!**
 
 ## Project Structure
 
@@ -133,11 +133,24 @@ npm run dev
 
 ## Production Deployment
 
-1. Set `NODE_ENV=production`
-2. Change default JWT secret and admin credentials
-3. Configure reverse proxy (nginx recommended)
-4. Set up SSL/TLS certificates
-5. Consider using PM2 for process management
+1. **Set Environment Variables:**
+   ```bash
+   export NODE_ENV=production
+   export JWT_SECRET="your-super-secure-random-secret"
+   export DEFAULT_ADMIN_PASSWORD="your-secure-password"
+   ```
+
+2. **Security Configuration:**
+   - Change default JWT secret and admin credentials (REQUIRED)
+   - Configure firewall and fail2ban
+   - Set up SSL/TLS certificates
+
+3. **Infrastructure:**
+   - Configure reverse proxy (nginx recommended)
+   - Consider using PM2 for process management
+   - Set up regular backups of data directory
+
+**⚠️ CRITICAL: The application will refuse to start in production without proper JWT_SECRET and DEFAULT_ADMIN_PASSWORD environment variables!**
 
 ## Future Features
 
